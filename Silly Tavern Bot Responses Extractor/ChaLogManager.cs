@@ -16,20 +16,28 @@ namespace Silly_Tavern_Bot_Responses_Extractor
 			try
 			{
                 List<Message> ap = null;
-                if ( inputFile !=null )
+                if (inputFile != null)
                 {
+                    ap = new List<Message>();
                     foreach (var line in File.ReadLines(inputFile))
                     {
                         if (string.IsNullOrWhiteSpace(line)) continue;
-                        var entry = JsonConvert.DeserializeObject<Chat>(line);
-                        if (entry != null && !entry.IsUser && !string.IsNullOrWhiteSpace(entry.Messages))
+                        var entry = JsonConvert.DeserializeObject<Message>(line);
+                        if (entry?.Mes != null)
                         {
+                            ap.Add(entry);
+
+
                         }
+                    }
+
+                }
 
 
 
 
-                        return ap;
+
+                            return ap;
 
 
             }
