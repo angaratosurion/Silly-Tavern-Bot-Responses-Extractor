@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Silly_Tavern_Bot_Responses_Extractor.Models
 {
-    internal class Extra
+   public class Extra
     {
         [JsonProperty("isSmallSys")]
         public bool IsSmallSys { get; set; }

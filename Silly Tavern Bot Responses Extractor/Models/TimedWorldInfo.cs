@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Silly_Tavern_Bot_Responses_Extractor.Models
 {
-    internal class TimedWorldInfo
+   public class TimedWorldInfo
     {
         [JsonProperty("sticky")]
         public Dictionary<string, object> Sticky { get; set; }

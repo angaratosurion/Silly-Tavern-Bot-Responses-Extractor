@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Silly_Tavern_Bot_Responses_Extractor.Models
 {
-    internal class Chat
+   public class Chat
     {
         [JsonProperty("user_name")]
         public string UserName { get; set; }
