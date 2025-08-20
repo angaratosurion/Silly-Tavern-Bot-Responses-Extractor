@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Silly Tavern Bot Responses Extractor": {
+      "commandName": "Project",
+      "commandLineArgs": "--input \"G:\\Cloud Folder\\NextCloud\\SilyTavern Data\\default-user\\chats\\default_Assistant\\Assistant - test.jsonl\" --output \".\\output.txt\""
+    }
+  }
+}

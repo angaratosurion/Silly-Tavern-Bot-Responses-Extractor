@@ -6,6 +6,7 @@
     <RootNamespace>Silly_Tavern_Bot_Responses_Extractor</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
