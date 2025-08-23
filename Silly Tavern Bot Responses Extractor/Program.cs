@@ -14,6 +14,7 @@ namespace Silly_Tavern_Bot_Responses_Extractor
             ChaLogManager  chamgr = new ChaLogManager();
             string inputPath = null;
             string outputPath = null;
+            Boolean onlyBots=true;
 
             for (int i = 0; i < args.Length; i++)
             {
@@ -27,12 +28,20 @@ namespace Silly_Tavern_Bot_Responses_Extractor
                         if (i + 1 < args.Length) outputPath = args[i + 1];
                         i++;
                         break;
+                    case "--OnlyBot":
+                        {
+                            if (i + 1 < args.Length) onlyBots=Convert.
+                                    ToBoolean( args[i + 1]);
+                            i++;
+                            break;
+                        }
                 }
             }
 
-            if (string.IsNullOrWhiteSpace(inputPath) || string.IsNullOrWhiteSpace(outputPath))
+            if (string.IsNullOrWhiteSpace(inputPath)
+                || string.IsNullOrWhiteSpace(outputPath))
             {
-                Console.WriteLine("Usage: SillyTavernExtractor.exe --input <input.jsonl> --output <output.txt>");
+                Console.WriteLine("Usage: STBResponsesExtractor.exe --input <input.jsonl> --output <output.txt>");
                 return;
             }
 
@@ -43,9 +52,18 @@ namespace Silly_Tavern_Bot_Responses_Extractor
             }
             var messaages = chamgr.GetMessages(inputPath);
            var botMessages= chamgr.GetBotsResponses(messaages);
-           string text = chamgr.ExportMessagesToText(botMessages, true);
-            Console.WriteLine(text);
-            File.WriteAllText(outputPath, text,System.Text.Encoding.UTF8); 
+            if (onlyBots != false)
+            {
+                string text = chamgr.ExportMessagesToText(botMessages, true);
+                Console.WriteLine(text);
+                File.WriteAllText(outputPath, text, System.Text.Encoding.UTF8);
+            }
+            else
+            {
+                string text = chamgr.ExportAllMessagesToText(botMessages, false);
+                Console.WriteLine(text);
+                File.WriteAllText(outputPath, text, System.Text.Encoding.UTF8);
+            }
 
             Console.ReadLine();
         }
