@@ -83,11 +83,11 @@ namespace Silly_Tavern_Bot_Responses_Extractor
                     {
                         if (removeFirstParagraph  )
                         {
-                            ap += RemoveFirstParagraph(message.Mes);
+                            ap +="---\n"+ RemoveFirstParagraph(message.Mes);
                         }
                         else
                         {
-                            ap += message.Mes;
+                            ap += "---\n" + message.Mes;
                         }
 
                     }
@@ -116,11 +116,11 @@ namespace Silly_Tavern_Bot_Responses_Extractor
                     {
                         if (removeFirstParagraph)
                         {
-                            ap += RemoveFirstParagraph(message.Mes);
+                            ap += "---\n" + RemoveFirstParagraph(message.Mes);
                         }
                         else
                         {
-                            ap += message.Mes;
+                            ap += "---\n" + message.Mes;
                         }
 
                     }
