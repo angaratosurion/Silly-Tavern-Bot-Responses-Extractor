@@ -64,7 +64,7 @@ namespace Silly_Tavern_Bot_Responses_Extractor
                 Console.WriteLine(text);
                 File.WriteAllText(outputPath, text, System.Text.Encoding.UTF8);
             }
-
+            Console.WriteLine("Finished Presss Enter to Exit...");
             Console.ReadLine();
         }
     }
